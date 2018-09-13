@@ -4,7 +4,7 @@
   --color-light-p-dark: #c7c7c7;
   --color-light-p-light: #ffffff;
 
-  --color-light-s: #7cb5ec;
+  --color-light-s: #9ac6f0;
   --color-light-s-dark: #5d99c6;
   --color-light-s-light: #c3fdff;
 
@@ -31,8 +31,12 @@
 }
 
 
-body{
-  background-image: url("0021.jpg");
+html {
+  background: url("0012.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 .container-main {
