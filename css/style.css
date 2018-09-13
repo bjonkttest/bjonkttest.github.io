@@ -153,6 +153,7 @@ table{
   border-collapse: collapse;
   width: 100%;
   color: var(--color-light-t-p);
+  height: 100%;
 }
 
 th{
