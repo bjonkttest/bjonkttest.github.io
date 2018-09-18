@@ -125,7 +125,7 @@ function createChart(selection,title,day) {
                 x1: 0, y1: 0, x2: 0, y2: 1
               },
               stops: [
-                [0, "#9ac6f0"],
+                [0, Highcharts.Color("#9ac6f0").setOpacity(0.4).get('rgba')],
                 [1, Highcharts.Color("#9ac6f0").setOpacity(0).get('rgba')]
               ]
             }

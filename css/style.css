@@ -156,7 +156,7 @@ button:hover{
 table{
   font-size: 14px;
   border-collapse: collapse;
-  width: 1fr;
+  width: 100%;
   color: var(--color-light-t-p);
   height: 100%;
 }
