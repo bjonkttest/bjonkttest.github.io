@@ -2,6 +2,8 @@
 <html lang="nl" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <meta name="theme-color" content="#9ac6f0">
+    <meta name="description" content="Astronomisch Getij: Scheveningen">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Astronomisch Getij</title>
     <link rel="stylesheet" href="css/style.css">
@@ -9,6 +11,10 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link rel="stylesheet" href="css/mdc.select.min.css" />
     <link rel="stylesheet" href="css/mdc.textfield.min.css" />
+
+    <noscript>
+      <textarea name="name" rows="8" cols="80">Yoo! Geen javascript? Helaas kan ik je in dat geval niet de getijden laten zien.</textarea>
+    </noscript>
   </head>
   <body>
 
@@ -19,7 +25,7 @@
         <div class="wrapper-date">
 
           <div class="mdc-text-field">
-            <input class="mdc-text-field__input" id="mdc-text-field" type="text">
+            <input class="mdc-text-field__input" id="mdc-text-field" type="text" tabindex="0">
           </div>
 
           <div class="wrapper-next">
