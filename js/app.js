@@ -7,6 +7,7 @@ var fp;
      defaultDate: today,
      onChange: function(selectedDates, datestr, instance) {
        var dateSelected = moment.utc(datestr).toDate();
+       fp.setDate(dateSelected);
        update(dateSelected);
      }
    });
@@ -67,7 +68,7 @@ function createChart(selection,title,day) {
               color: "#ff1744",
               width: 1,
               value: getNL(new Date()),
-              zIndex: 3,
+              zIndex: 4,
             }],
           plotBands: [{
             color: "#e0e0e0", // Color value
@@ -108,11 +109,6 @@ function createChart(selection,title,day) {
             }
           }
         },
-        plotOptions: {
-          areaspline: {
-            fillOpacity: 0.3
-          },
-        },
         series: [{
             name: 'Waterstand [cm]',
             data: waterstand.slice(12,157),
@@ -121,6 +117,7 @@ function createChart(selection,title,day) {
             marker:{
               enabled:false
             },
+            color: "#9ac6f0",
             showInLegend: false,
             threshold: -Infinity,
             fillColor:{
@@ -128,8 +125,8 @@ function createChart(selection,title,day) {
                 x1: 0, y1: 0, x2: 0, y2: 1
               },
               stops: [
-                [0, Highcharts.getOptions().colors[0]],
-                [1, Highcharts.Color(Highcharts.getOptions().colors[0]).setOpacity(0).get('rgba')]
+                [0, "#9ac6f0"],
+                [1, Highcharts.Color("#9ac6f0").setOpacity(0).get('rgba')]
               ]
             }
         }],

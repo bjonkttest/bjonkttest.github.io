@@ -5,7 +5,7 @@
   --color-light-p-light: #ffffff;
 
   --color-light-s: #9ac6f0;
-  --color-light-s-dark: #5d99c6;
+  --color-light-s-dark: #8ab2d8;
   --color-light-s-light: #c3fdff;
 
   --color-light-a: #ff1744;
@@ -40,10 +40,8 @@ html {
 }
 
 .container-main {
-  background-color: #fafafacc;
-  border-radius: 4px;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
   padding: 20px;
+
   display: grid;
   grid-gap: 10px;
   max-width: 900px;
@@ -58,37 +56,39 @@ html {
 }
 
 .container-chart{
-  grid-area: c;
-  width: 100%;
-  min-width: 100px;
   background: var(--color-light-p-light);
   border-radius: 4px;
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-}
 
+  grid-area: c;
+  min-width: 100px;
+  height: 355px;
+}
+.highcharts-root{
+  display: block;
+}
 #content-chart{
   grid-area: c;
   min-width: 100px;
 }
 
 .container-cta{
-  padding: 10px;
-  grid-area: d;
   background: var(--color-light-p-light);
   border-radius: 4px;
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  padding: 10px;
+  grid-area: d;
 }
 
 .container-table{
-  padding: 2px;
-  grid-area: t;
   background: var(--color-light-p-light);
   border-radius: 4px;
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  grid-area: t;
 }
 
 .wrapper-cta{
-  height: 100%;
+  height: 1fr;
   display: grid;
   grid-gap: 4px;
   grid-template-columns: 1fr;
@@ -104,8 +104,9 @@ html {
 }
 
 .wrapper-next{
-  width: 100%;
+  width: 1fr;
   display: inline-grid;
+  grid-gap: 4px;
   grid-template-columns:1fr;
   grid-template-rows: 1fr 1fr;
 }
@@ -119,7 +120,7 @@ html {
 }
 
 .mdc-text-field{
-  width: 100%;
+  width: 1fr;
 }
 
 .mdc-select{
@@ -143,19 +144,19 @@ i {
 }
 
 button{
-  background-color: transparent;
+  background-color: var(--color-light-s);
   border: none;
-  border-radius: 4px;
+  border-radius: 2px;
 }
 
 button:hover{
-  background-color: var(--color-light-p-dark);
+  background-color: var(--color-light-s-dark);
 }
 
 table{
   font-size: 14px;
   border-collapse: collapse;
-  width: 100%;
+  width: 1fr;
   color: var(--color-light-t-p);
   height: 100%;
 }
@@ -178,13 +179,29 @@ td{
 
   @media (max-width: 550px) {
     .container-main{
+      display: grid;
+      grid-gap: 10px;
+      max-width: 900px;
+      max-height: 100%;
+
       padding: 10px;
+      grid-template-columns: repeat(6,minmax(40px,1fr));
       grid-template-rows: repeat(4,minmax(40px,1fr));
       grid-template-areas:
         "c c c c c c"
         "c c c c c c"
         "t t t t t t"
         "d d d d d d"
+    }
+
+    .container-chart{
+      background: var(--color-light-p-light);
+      border-radius: 4px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+
+      grid-area: c;
+      min-width: 100px;
+      height: 282px;
     }
 
 }
