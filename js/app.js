@@ -265,7 +265,7 @@ function getRealTime(selection) {
     $.get("https://cors-anywhere.herokuapp.com/"+windurl, function(winddata) {
       golfhoogte = wavedata.latest.data;
       windkracht = winddata.latest.data;
-      var fullstring = 'Actuele Metingen - ' + 'Golfhoogte [cm]: ' + golfhoogte + ', Windsnelheid [Bft]: ' + windkracht;
+      var fullstring = 'Actuele Metingen - ' + 'Golfhoogte [cm]: ' + golfhoogte + ', Windsnelheid [m/s]: ' + windkracht;
       document.getElementById('realtimedata').innerHTML = fullstring;
       console.log(fullstring);
     });
