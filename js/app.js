@@ -111,7 +111,7 @@ function createChart(selection,title,day) {
           }
         },
         series: [{
-            name: 'Waterstand [cm]',
+            name: 'Astronomisch Getij [cm]',
             data: waterstand.slice(12,157),
             pointStart: Date.UTC(day.getUTCFullYear(),day.getUTCMonth(),day.getUTCDate(),0,0),
             pointInterval: 60 * 10000,
@@ -119,7 +119,7 @@ function createChart(selection,title,day) {
               enabled:false
             },
             color: "#9ac6f0",
-            showInLegend: false,
+            showInLegend: true,
             threshold: -Infinity,
             fillColor:{
               linearGradient: {
@@ -264,10 +264,9 @@ function getRealTime(selection) {
   $.get("https://cors-anywhere.herokuapp.com/"+waveurl, function(wavedata) {
     $.get("https://cors-anywhere.herokuapp.com/"+windurl, function(winddata) {
       golfhoogte = wavedata.latest.data;
-      windkracht = winddata.latest.data;
-      var fullstring = 'Actuele Metingen - ' + 'Golfhoogte [cm]: ' + golfhoogte + ', Windsnelheid [m/s]: ' + windkracht;
+      windkracht = Math.round(winddata.latest.data/0.5144);
+      var fullstring = 'Actuele Metingen - ' + 'Golfhoogte [cm]: ' + golfhoogte + ', Windsnelheid [kt]: ' + windkracht;
       document.getElementById('realtimedata').innerHTML = fullstring;
-      console.log(fullstring);
     });
   });
 }
