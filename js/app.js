@@ -261,8 +261,8 @@ function getRealTime(selection) {
   }
   var waveurl = 'https://waterinfo.rws.nl/api/detail?expertParameter=Significante___20golfhoogte___20in___20het___20spectrale___20domein___20Oppervlaktewater___20golffrequentie___20tussen___2030___20en___20500___20mHz___20in___20cm&locationSlug=' + wavelocation + '&user=publiek';
   var windurl = 'https://waterinfo.rws.nl/api/detail?expertParameter=Windsnelheid___20Lucht___20t.o.v.___20Mean___20Sea___20Level___20in___20m___2Fs&locationSlug=' + windlocation + '&user=publiek'
-  $.get("http://cors-anywhere.herokuapp.com/"+waveurl, function(wavedata) {
-    $.get("http://cors-anywhere.herokuapp.com/"+windurl, function(winddata) {
+  $.get("https://cors-anywhere.herokuapp.com/"+waveurl, function(wavedata) {
+    $.get("https://cors-anywhere.herokuapp.com/"+windurl, function(winddata) {
       golfhoogte = wavedata.latest.data;
       windkracht = winddata.latest.data;
       var fullstring = 'Actuele Metingen - ' + 'Golfhoogte [cm]: ' + golfhoogte + ', Windsnelheid [Bft]: ' + windkracht;
