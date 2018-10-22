@@ -236,8 +236,9 @@ function createTable(selection,day) {
 };
 
 function getRealTime(selection) {
-  document.getElementById('realtimedata').innerHTML = 'loading...';
-  var location;
+  document.getElementById('realtimedata').innerHTML = 'Actueel - loading...';
+  var wavelocation;
+  var windlocation;
   if (selection=='Den Helder') {
     wavelocation = 'IJgeul-stroommeetpaal%28SPY%29';
     windlocation = 'De-Kooy%28DEKO%29';
@@ -258,22 +259,25 @@ function getRealTime(selection) {
     windlocation = 'Cadzand-wind%28CAWI%29';
   }
   var waveurl = 'https://waterinfo.rws.nl/api/detail?expertParameter=Significante___20golfhoogte___20in___20het___20spectrale___20domein___20Oppervlaktewater___20golffrequentie___20tussen___2030___20en___20500___20mHz___20in___20cm&locationSlug=' + wavelocation + '&user=publiek';
-  var windurl = 'https://waterinfo.rws.nl/api/detail?expertParameter=Windsnelheid___20Lucht___20t.o.v.___20Mean___20Sea___20Level___20in___20m___2Fs&locationSlug=' + windlocation + '&user=publiek'
+  var periodurl = 'https://waterinfo.rws.nl/api/detail?expertParameter=Golfperiode___20bepaald___20uit___20de___20spectrale___20momenten___20m0___20en___20m2___20Oppervlaktewater___20golffrequentie___20tussen___2030___20en___20500___20mHz___20in___20s&locationSlug=' + wavelocation + '&user=publiek';
+  var windurl = 'https://waterinfo.rws.nl/api/detail?expertParameter=Windsnelheid___20Lucht___20t.o.v.___20Mean___20Sea___20Level___20in___20m___2Fs&locationSlug=' + windlocation + '&user=publiek';
+  var directionurl = 'https://waterinfo.rws.nl/api/detail?expertParameter=Windrichting___20Lucht___20t.o.v.___20ware___20Noorden___20in___20graad&locationSlug='+windlocation+'&user=expert';
 
-  var settings = {
-    "async": true,
-    "crossDomain": true,
-    "url": "https://crossorigin.me/"+waveurl,
-    "dataType": 'jsonp',
-    "method": "GET",
-    "headers": {
-      "cache-control": "no-cache",
-      "Postman-Token": "ced017d2-6197-4166-86bf-3a186a1281d0"
+  $.ajax({
+    crossOrigin: true,
+    url: waveurl,
+    dataType: "jsonp",
+    success: function(data) {
+      var wavedata = JSON.parse(data);
+      var waveheight = wavedata.latest.data;
+
+      var golfhoogte = wavedata.latest.data;
+      var golfperiode = perioddata.latest.data;
+      var windkracht = Math.round(winddata.latest.data/0.5144);
+      var windrichting = Math.round(directiondata.latest.data);
+      var fullstring = 'Actueel - ' + 'Golven: ' + golfhoogte+'cm@'+golfperiode+'s'+', Wind: ' + windkracht+'kt'+' ('+windrichting+'°'+')';
+      document.getElementById('realtimedata').innerHTML = fullstring;
     }
-  }
-
-  $.ajax(settings).done(function (response) {
-    console.log(response);
   });
 }
 

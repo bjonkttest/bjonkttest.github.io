@@ -78,7 +78,6 @@ html {
 
   grid-area: c;
   min-width: 100px;
-  height: 365px;
 }
 .highcharts-root{
   display: block;

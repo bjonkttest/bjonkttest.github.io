@@ -1,31 +1,20 @@
 <!DOCTYPE html>
 <html lang="nl" dir="ltr">
   <head>
-    <meta charset="utf-8">
-    <meta name="theme-color" content="#9ac6f0">
-    <meta name="description" content="Astronomisch Getij: Scheveningen">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script type="text/javascript">
-      var host = "prahprah.nl"
-      if((host==window.location.host) && (window.location.protocol != "https:")){
-      window.location.protocol = "https";
-      }
-      </script>
-    <link rel="canonical" href="https://prahprah.nl"/>
+    <meta charset="utf-8"></meta>
+    <meta name="theme-color" content="#9ac6f0"></meta>
+    <meta name="description" content="Astronomisch Getij: Scheveningen"></meta>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
     <title>Astronomisch Getij</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/flatpickr.min.css" />
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-    <link rel="stylesheet" href="css/mdc.select.min.css" />
-    <link rel="stylesheet" href="css/mdc.textfield.min.css" />
-
-    <noscript>
-      <textarea name="name" rows="8" cols="80">Yoo! Geen javascript? Helaas kan ik je in dat geval niet de getijden laten zien.</textarea>
-    </noscript>
+    <link rel="stylesheet" href="css/style.css"></link>
+    <link rel="stylesheet" href="css/flatpickr.min.css"></link>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"></link>
+    <link rel="stylesheet" href="css/mdc.select.min.css"></link>
+    <link rel="stylesheet" href="css/mdc.textfield.min.css"></link>
   </head>
   <body>
     <div class="container-main">
-      <div class="realtime" id="realtimedata">loading</div>
+      <div class="realtime" id="realtimedata">Actueel - loading...</div>
       <div class="container-cta">
         <div class="wrapper-cta">
           <div class="wrapper-location">
@@ -42,7 +31,7 @@
           </div>
           <div class="wrapper-date">
             <div class="mdc-text-field">
-              <input class="mdc-text-field__input" id="mdc-text-field" type="text" tabindex="0">
+              <input class="mdc-text-field__input" id="mdc-text-field" type="text" tabindex="0"></input>
             </div>
             <div class="wrapper-next">
               <button class="button" onclick="nextDay()"> <i class="arrowright"></i> </button>
@@ -98,8 +87,8 @@
       </div></div>
       <div class="container-chart" id="content-chart"></div>
     </div>
-
     <script src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jquery.ajax-cross-origin.min.js"></script>
     <script src="js/moment.min.js"></script>
     <script src="js/suncalc.js"></script>
     <script src="js/highstock.js"></script>
