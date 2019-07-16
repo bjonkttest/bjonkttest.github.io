@@ -1,0 +1,20 @@
+{ "eten": {
+  "pasta": "pasta",
+  "pizza": "pizza",
+  "hamburger":"hamburger"
+},
+"uiteten": {
+  "la plume": "la plume",
+  "strand":"strand"
+},
+"koffie": {
+  "strand":"strand",
+  "stinkie":"stinkie bucket",
+  "spaarne66":"spaarne66"
+},
+"activiteit":{
+  "koffie":"koffie",
+  "uiteten":"uiteten",
+  "sexen":"sexen"
+}
+}

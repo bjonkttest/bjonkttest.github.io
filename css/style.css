@@ -1,0 +1,100 @@
+a {
+  text-decoration: none;
+  color: #fff;
+}
+body {
+  background: #212121;
+}
+/*
+body {
+	width: 100wh;
+	height: 90vh;
+	color: #fff;
+	background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
+	background-size: 400% 400%;
+	-webkit-animation: Gradient 30s ease infinite;
+	-moz-animation: Gradient 30s ease infinite;
+	animation: Gradient 30s ease infinite;
+}
+
+@-webkit-keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
+@-moz-keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
+@keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+*/
+
+.fscontainer{
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  grid-template-rows: repeat(2,1fr);
+  grid-gap: 0px;
+  width: 100vw;
+  height: 100vh;
+
+  font-size: 33px;
+  color: #fff;
+  font-family: 'Varela Round', sans-serif;
+}
+
+.item{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.item1{
+}
+.item2{
+}
+.item3{
+}
+.item4{
+}
+
+.etencontainer{
+  display: grid;
+  grid-template-columns: repeat(1,1fr);
+  grid-template-rows: repeat(3,1fr);
+  grid-gap: 2px;
+  width: 100vw;
+  height: 100vh;
+
+  font-size: 33px;
+  color: #fff;
+  font-family: 'Varela Round', sans-serif;
+}
+
+.buttonchoose{
+
+}
