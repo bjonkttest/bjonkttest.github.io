@@ -5,6 +5,9 @@ a {
 body {
   background: #212121;
 }
+textarea:focus, input:focus{
+    outline: none;
+}
 /*
 body {
 	width: 100wh;
